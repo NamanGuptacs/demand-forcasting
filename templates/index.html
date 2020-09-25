@@ -17,15 +17,15 @@
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
     	<input type="text" name="Store_ID" placeholder="Store_ID" required="required" />
-        <input type="text" name="Dept_ID" placeholder="Dept_ID" required="required" />
-		<input type="text" name="Store_Type" placeholder="0 or 1 or 2" required="required" />
-		<input type="text" name="Store_size" placeholder="for eg. 151315" required="required" />
-		<input type="text" name="Week" placeholder="for eg. 5" required="required" />
-		<input type="text" name="Days Passed" placeholder="for eg. 5" required="required" />
-		<input type="text" name="Temperature" placeholder="Temperature eg. 42.31" required="required" />
-		<input type="text" name="CPI" placeholder="consumer price index" required="required" />	
-		<input type="text" name="Unemployment_rate" placeholder="Unemployment_rate" required="required" />
-		<input type="text" name="MarkDown-promotional" placeholder="MarkDown-promotional" required="required" />
+        <input type="text" name="Dept_ID" placeholder="Dept_ID" required="required" /><br>
+	<input type="text" name="Store_Type" placeholder="0 or 1 or 2" required="required" /><br>
+	<input type="text" name="Store_size" placeholder="for eg. 151315" required="required" /><br>
+	<input type="text" name="Week" placeholder="for eg. 5" required="required" /><br>
+	<input type="text" name="Days Passed" placeholder="for eg. 5" required="required" /><br>
+	<input type="text" name="Temperature" placeholder="Temperature eg. 42.31" required="required" /><br>
+	<input type="text" name="CPI" placeholder="consumer price index" required="required" />	<br>
+	<input type="text" name="Unemployment_rate" placeholder="Unemployment_rate" required="required" /><br>
+	<input type="text" name="MarkDown-promotional" placeholder="MarkDown-promotional" required="required" /><br>
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
 
