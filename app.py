@@ -17,8 +17,8 @@ def predict():
     '''
     int_features = [float(x) for x in request.form.values()]
     final_features = [np.array(int_features)]
-    final_features_scaled = final_features.apply(zscore)
-    prediction = model.predict(final_features_scaled)
+#     final_features_scaled = final_features.apply(zscore)
+    prediction = model.predict(final_features)
 
     output = round(prediction[0], 2)
 
