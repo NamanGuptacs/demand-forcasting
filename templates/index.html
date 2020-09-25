@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+<body>
+ <div class="login">
+	<h1>Predict Salary Analysis</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Store_ID" placeholder="Store_ID" required="required" />
+        <input type="text" name="Dept_ID" placeholder="Dept_ID" required="required" />
+		<input type="text" name="Store_Type" placeholder="0 or 1 or 2" required="required" />
+		<input type="text" name="Store_size" placeholder="for eg. 151315" required="required" />
+		<input type="text" name="Week" placeholder="for eg. 5" required="required" />
+		<input type="text" name="Days Passed" placeholder="for eg. 5" required="required" />
+		<input type="text" name="Temperature" placeholder="Temperature eg. 42.31" required="required" />
+		<input type="text" name="CPI" placeholder="consumer price index" required="required" />	
+		<input type="text" name="Unemployment_rate" placeholder="Unemployment_rate" required="required" />
+		<input type="text" name="MarkDown-promotional" placeholder="MarkDown-promotional" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
