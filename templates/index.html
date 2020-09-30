@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>ML API</title>
-  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<!--   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
@@ -15,7 +15,7 @@
 	<h1>Demand Forecasting Analysis</h1>
 
      <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict')}}"method="post">
+    <!--<form action="{{ url_for('predict')}}"method="post">
     	<input type="text" name="Store_ID" placeholder="Store_ID" required="required" /><br>
         <input type="text" name="Dept_ID" placeholder="Dept_ID" required="required" /><br>
 	<input type="text" name="Store_Type" placeholder="Store_Type between 0 or 1 or 2" required="required" /><br>
@@ -36,4 +36,64 @@
  </div>
 
 
+</body> -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Demand Forecasting Analysis</h2>
+  <form action="{{ url_for('predict')}}"method="post">
+    <div class="form-group">
+      <label for="Store_ID">Store_ID:</label>
+      <input type="text" class="form-control" id="Store_ID" placeholder="Enter Store_ID" name="Store_ID">
+    </div>
+    <div class="form-group">
+      <label for="Dept_ID">Dept_ID:</label>
+      <input type="text" class="form-control" id="Dept_ID" placeholder="Enter Dept_ID" name="Dept_ID">
+    </div>
+    <div class="form-group">
+      <label for="Store_Type">Store_Type:</label>
+      <input type="text" class="form-control" id="Store_Type" placeholder="Enter Store_Type as 0, 1 or, 2" name="Store_Type">
+    </div>
+    <div class="form-group">
+      <label for="Store_size">Store_size:</label>
+      <input type="text" class="form-control" id="Store_size" placeholder="Enter Store_size for eg. 151315" name="Store_size">
+    </div>
+    <div class="form-group">
+      <label for="Week">Week:</label>
+      <input type="text" class="form-control" id="Week" placeholder="Enter Week for eg. 5" name="Week">
+    </div>
+    <div class="form-group">
+      <label for="daysPassed">Days Passed:</label>
+      <input type="text" class="form-control" id="daysPassed" placeholder="Enter Days Passed for eg. 5" name="daysPassed">
+    </div>
+    <div class="form-group">
+      <label for="Temperature">Temperature:</label>
+      <input type="text" class="form-control" id="temperature" placeholder="Enter Temperature of place eg. 42.31" name="temperature">
+    </div>
+    <div class="form-group">
+      <label for="cpi">Consumer price index:</label>
+      <input type="text" class="form-control" id="cpi" placeholder="Enter Consumer price index" name="cpi">
+    </div>
+    <div class="form-group">
+      <label for="Unemployment_rate">Unemployment Rate:</label>
+      <input type="text" class="form-control" id="Unemployment_rate" placeholder="Enter Unemployment Rate" name="Unemployment_rate">
+    </div>
+    <div class="form-group">
+      <label for="MarkDown-promotional">MarkDown Promotional:</label>
+      <input type="text" class="form-control" id="MarkDown-promotional" placeholder="Enter MarkDown-promotional" name="MarkDown-promotional">
+    </div>	  
+
+    <button type="submit" class="btn btn-primary">Predict</button>
+  </form>
+	<div>
+		{{ prediction_text }}
+	</div>
+</div>
 </body>
+</html>
