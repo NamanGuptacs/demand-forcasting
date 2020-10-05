@@ -16,7 +16,7 @@
 
 <div class="container">
   <h2>Demand Forecasting Analysis</h2>
-  <form action="{{ url_for('predict')}}"method="post"  id="myForm">
+  <form action="{{ url_for('predict')}}"method="post" onsubmit="openModal()" id="myForm">
     <div class="form-group">
       <label for="Store_ID">Store_ID:</label>
       <input type="text" class="form-control" id="Store_ID" placeholder="Enter Store_ID" name="Store_ID">
