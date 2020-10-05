@@ -4,39 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <title>ML API</title>
-<!--   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-  
-</head>
-<body>
- <div class="login">
-	<h1>Demand Forecasting Analysis</h1>
-
-     <!-- Main Input For Receiving Query to our ML -->
-    <!--<form action="{{ url_for('predict')}}"method="post">
-    	<input type="text" name="Store_ID" placeholder="Store_ID" required="required" /><br>
-        <input type="text" name="Dept_ID" placeholder="Dept_ID" required="required" /><br>
-	<input type="text" name="Store_Type" placeholder="Store_Type between 0 or 1 or 2" required="required" /><br>
-	<input type="text" name="Store_size" placeholder="Store_size for eg. 151315" required="required" /><br>
-	<input type="text" name="Week" placeholder="Week for eg. 5" required="required" /><br>
-	<input type="text" name="Days Passed" placeholder="Days Passed for eg. 5" required="required" /><br>
-	<input type="text" name="Temperature" placeholder="Temperature eg. 42.31" required="required" /><br>
-	<input type="text" name="CPI" placeholder="Consumer price index" required="required" />	<br>
-	<input type="text" name="Unemployment_rate" placeholder="Unemployment_rate" required="required" /><br>
-	<input type="text" name="MarkDown-promotional" placeholder="MarkDown-promotional" required="required" /><br>
-        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
-    </form>
-
-   <br>
-   <br>
-   {{ prediction_text }}
-
- </div>
-
-
-</body> -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -89,11 +56,33 @@
       <input type="text" class="form-control" id="MarkDown-promotional" placeholder="Enter MarkDown-promotional" name="MarkDown-promotional">
     </div>	  
 
-    <button type="submit" class="btn btn-primary">Predict</button>
+    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Predict</button>
   </form>
-	<div>
-		{{ prediction_text }}
-	</div>
+	
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Sales Should Be</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          {{ prediction_text }}
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>	
 </div>
 </body>
 </html>
