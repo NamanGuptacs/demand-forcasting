@@ -1,7 +1,4 @@
-$('#myForm').on('submit', function(e){
-  $('#myModal').modal('show');
-  e.preventDefault();
-});
+
 
 <!DOCTYPE html>
 <html >
@@ -19,7 +16,7 @@ $('#myForm').on('submit', function(e){
 
 <div class="container">
   <h2>Demand Forecasting Analysis</h2>
-  <form action="{{ url_for('predict')}}"method="post">
+  <form action="{{ url_for('predict')}}"method="post" onsubmit="openModal()" id="myForm">
     <div class="form-group">
       <label for="Store_ID">Store_ID:</label>
       <input type="number" class="form-control" id="Store_ID" placeholder="Enter Store_ID" name="Store_ID">
@@ -63,7 +60,12 @@ $('#myForm').on('submit', function(e){
 
     <button type="submit" class="btn btn-primary">Predict</button>
   </form>
-	
+ <script>
+	 $('#myForm').on('submit', function(e){
+  $('#myModal').modal('show');
+  e.preventDefault();
+});
+	</script>
   <!-- The Modal -->
   <div class="modal fade" id="myModal">
     <div class="modal-dialog">
