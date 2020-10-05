@@ -16,7 +16,7 @@
 
 <div class="container">
   <h2>Demand Forecasting Analysis</h2>
-  <form action="{{ url_for('predict')}}"method="post" onsubmit="openModal()" id="myForm">
+  <form action="{{ url_for('predict')}}"method="post"  id="myForm">
     <div class="form-group">
       <label for="Store_ID">Store_ID:</label>
       <input type="text" class="form-control" id="Store_ID" placeholder="Enter Store_ID" name="Store_ID">
@@ -58,7 +58,7 @@
       <input type="text" class="form-control" id="MarkDown-promotional" placeholder="Enter MarkDown-promotional" name="MarkDown-promotional">
     </div>	  
 
-    <button type="submit" class="btn btn-primary">Predict</button>
+    <button type="submit" class="btn btn-primary"  data-toggle="modal" data-target="#myModal">Predict</button>
   </form>
 <!-- 	<div>{{ prediction_text }}</div> -->
 <!--  <script>
@@ -67,6 +67,7 @@
   e.preventDefault();
 });
 	</script> -->
+{% if show_predictions_modal %}	
   <!-- The Modal -->
   <div class="modal fade" id="myModal">
      <div class="modal-dialog" role="document">
@@ -90,7 +91,8 @@
         
       </div>
     </div>
-  </div>	 
+  </div>
+	{% endif %}
 </div>
 </body>
 </html>
