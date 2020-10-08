@@ -22,7 +22,7 @@ def predict():
 
     output = round(prediction[0], 2)
 
-    return render_template('index.html', prediction_text=output,show_predictions_modal=True)
+    return render_template('predict.html', prediction_text=output)
 #     return redirect(url_for('index') + '#myModal', prediction_text=output)
 
 if __name__ == "__main__":
